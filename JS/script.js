@@ -4,8 +4,8 @@ let startNewGameButton = document.getElementById('startNewGame');
 let pauseGameButton = document.getElementById('pauseGame');
 let grid = document.getElementsByClassName('grid')[0];
 let squares = document.querySelectorAll('.square');
-let gameMusic = new Audio('../../Assets/gameMusic.mp3');
-let hitMusic = new Audio('../../Assets/hitMusic.mp3');
+let gameMusic = new Audio('../Files/Audio/gameMusic.mp3');
+let hitMusic = new Audio('../Files/Audio/hitMusic.mp3');
 
 
 let score = 0;
