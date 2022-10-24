@@ -26,23 +26,12 @@ function countDown() {
     timeLeftH2.innerHTML = `Time Left : ${timeLeft}`;
 
     if (timeLeft === 0) {
-        // clearInterval(timerId);
-        // clearInterval(randomMoleId);
+        clearInterval(timerId);
+        clearInterval(randomMoleId);
     }
 }
 
 randomeMole();
-
-squares.forEach(square => {
-    square.addEventListener('mousedown', () => {
-        if (square.id === hitPosition) {
-            ++score;
-            scoreH2.innerHTML = `Your Score ${score}`;
-            hitPosition = null;
-        }
-    })
-})
-
 
 function startGame() {
     score = 0;
@@ -54,8 +43,34 @@ function startGame() {
     randomMoleId = setInterval(countDown, 1000);
 }
 
+function pauseResumeGame() {
+    if (pauseGameButton.textContent === 'Pause') {
+        clearInterval(timerId);
+        clearInterval(randomMoleId);
+        timerId = null;
+        randomMoleId = null;
+        pauseGameButton.textContent = 'Resume';
+    } else {
+        timerId = setInterval(randomeMole, 1000);
+        randomMoleId = setInterval(countDown, 1000);
+        pauseGameButton.textContent = 'Pause';
+    }
+}
+
+squares.forEach(square => {
+    square.addEventListener('mousedown', () => {
+        if (timerId !== null) {
+            if (square.id === hitPosition) {
+                ++score;
+                scoreH2.innerHTML = `Your Score ${score}`;
+                hitPosition = null;
+            }
+        }
+    })
+})
+
+
+
 
 startNewGameButton.addEventListener('click', startGame);
-startGame();
-
-pauseGameButton.add('click', pauseResumeGame);
+pauseGameButton.addEventListener('click', pauseResumeGame);
