@@ -5,6 +5,7 @@ let pauseGameButton = document.getElementById('pauseGame');
 
 let squares = document.querySelectorAll('.square');
 
+// Randomly Place Mole
 function randomeMole() {
     squares.forEach(square => {
         square.classList.remove('mole');
@@ -15,3 +16,16 @@ function randomeMole() {
 }
 
 randomeMole();
+
+function startGame() {
+    score = 0;
+    timeLeftH2 = 60;
+
+    //call back  function
+    //setInterval call function at regular interval
+    setInterval(randomeMole, 1000);
+}
+
+
+startNewGameButton.addEventListener('click', startGame);
+startGame();
