@@ -70,6 +70,6 @@ button:hover {
 }
 
 .mole {
-    background: url('../../Assets/mole.png');
+    background: url('../Files/Images/mole.png');
     background-size: cover;
 }
