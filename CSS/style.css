@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(151, 62, 224);
+    background-color: rgb(151, 151, 232);
 }
 
 .main {
@@ -31,7 +31,7 @@
 
 .main h2 {
     display: inline-block;
-    background: rgb(255, 181, 251);
+    background: rgb(9, 108, 193);
     border-radius: 20px;
     margin: 6px;
     padding: 12px 5px;
@@ -43,7 +43,7 @@ button {
     padding: 12px 5px;
     border-radius: 20px;
     border: none;
-    background-color: rgb(209, 111, 255);
+    background-color: rgb(201, 164, 235);
     box-shadow: 1px 1px 3px black;
 }
 
@@ -65,7 +65,7 @@ button:hover {
     width: 180px;
     height: 160px;
     border: 1px solid black;
-    box-shadow: 1px 3px 5px rgb(150, 45, 255);
+    box-shadow: 1px 3px 5px blue;
     margin: 10px;
 }
 
